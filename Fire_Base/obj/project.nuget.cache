@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GXIoERHSbEU=",
+  "dgSpecHash": "ws7fgt7qyFg=",
   "success": true,
   "projectFilePath": "D:\\Visual_Code\\Lap_Trinh_Web\\BaiDoXe_1\\Fire_Base\\FirebaseFormApi.csproj",
   "expectedPackageFiles": [
@@ -14,8 +14,7 @@
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.0.0\\microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
-    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.300\\microsoft.net.sdk.compilers.toolset.9.0.300.nupkg.sha512"
+    "C:\\Users\\ADMIN\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512"
   ],
   "logs": []
 }
