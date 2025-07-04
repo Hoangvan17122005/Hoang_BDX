@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Bãi Đỗ Xe Thông Minh 🔒 - Đăng Nhập</title>
+
+  <!-- Bootstrap + Custom CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/Login.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body class="sub_page">
+  <!-- Header Section (Fixed at Top) -->
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html"><span>Bãi Đỗ Xe Thông Minh 🔒</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+          <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">Check Bãi</a></li>
+              <li class="nav-item"><a class="nav-link" href="feature.html">Tra Cứu</a></li>
+              <li class="nav-item"><a class="nav-link" href="service.html">Dịch Vụ</a></li>
+              <li class="nav-item"><a class="nav-link" href="ThanhToan.html">Thanh Toán</a></li>
+              <li class="nav-item active"><a class="nav-link" href="contact.html">Đăng Nhập</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content with Form -->
+  <div class="main-content">
+    <div class="container login-container" id="loginForm">
+      <!-- Phần Đăng nhập -->
+      <div class="form-box login">
+            <form action="#">
+                <h1>Đăng Nhập</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Tên Đăng Nhập " required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="login-password" placeholder="Mật Khẩu" required>
+                    <i class='bx bxs-lock-alt' style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%);"></i>
+                   
+                </div>
+                <div class="forgot-link">
+                    <a href="#">Bạn quên mật khẩu ?</a>
+                </div>
+                <button type="submit" class="btn">Đăng Nhập</button>
+            </form>
+        </div>
+      <!-- Phần Đăng ký -->
+      <div class="form-box register">
+            <form action="#">
+                <h1>Đăng ký tài khoản </h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Tên Đăng Nhập" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required>
+                    <i class='bx bxs-envelope' ></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Mật Khẩu" required>
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Xác nhận Mật Khẩu" required>
+                    <i class='bx bxs-lock' ></i>
+                </div>
+                <button type="submit" class="btn">Đăng Ký </button>
+            </form>
+        </div>
+      <!-- Toggle Panels -->
+      <div class="toggle-box">
+            <div class="toggle-panel toggle-left">
+                <h1> Bãi Đỗ Xe AI 🦾</h1>
+                <p>Bạn Không có tài khoản ?</p>
+                <button class="btn register-btn">Đăng ký</button>
+            </div>
+
+            <div class="toggle-panel toggle-right">
+                <h1>Bãi Đỗ Xe AI 🦾</h1>
+                <p>Bạn đã có tài khoản ?</p>
+                <button class="btn login-btn">Đăng nhập</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Biểu tượng người dùng -->
+  <div id="userIconContainer" style="display: none; position: relative;">
+    <i id="userIcon" class="fa fa-user-circle" style="font-size: 2.5rem; cursor: pointer;"></i>
+    <div id="userInfo" style="display: none; position: absolute; top: 100%; left: 0; background: white; border: 1px solid #ccc; padding: 10px; z-index: 10; width: 250px;">
+      <p>👤 Tài khoản: <span id="infoUsername"></span></p>
+      <p>🔑 Mật khẩu: <span id="infoPassword"></span></p>
+      <p>📧 Email: <span id="infoEmail"></span></p>
+      <button onclick="logout()" style="width: 100%;">🚪 Đăng Xuất</button>
+    </div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <!-- Script JS xử lý đăng nhập -->
+  <script src="js/Login.js"></script>
+  <script>
+  const container = document.querySelector('.container');
+  const passwordField = document.getElementById('login-password'); // Corrected ID
+  const togglePassword = document.getElementById('toggle-password');
+
+  togglePassword.addEventListener('click', function () {
+    const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordField.setAttribute('type', type);
+    this.classList.toggle('bx-show');
+    this.classList.toggle('bx-hide');
+  });
+
+  function showRegisterForm() {
+    container.classList.add('active');
+    document.querySelector('.form-box.login').style.display = 'none';
+    document.querySelector('.form-box.register').style.display = 'block';
+    document.querySelector('.toggle-panel.toggle-left').style.display = 'none';
+    document.querySelector('.toggle-panel.toggle-right').style.display = 'block';
+  }
+
+  function showLoginForm() {
+    container.classList.remove('active');
+    document.querySelector('.form-box.login').style.display = 'block';
+    document.querySelector('.form-box.register').style.display = 'none';
+    document.querySelector('.toggle-panel.toggle-left').style.display = 'block';
+    document.querySelector('.toggle-panel.toggle-right').style.display = 'none';
+  }
+
+  // Add click event to the "Đăng Ký" and "Đăng Nhập" buttons
+  document.querySelector('.toggle-panel .register-btn').addEventListener('click', showRegisterForm);
+  document.querySelector('.toggle-panel .login-btn').addEventListener('click', showLoginForm);
+</script>
+</body>
+</html>

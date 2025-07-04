@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif; /* 👉 Dùng phông từ code 1 */
+  background-color: #f2f2f2; /* 👉 Nền xám nhạt từ code 1 */
+  margin: 0;
+  padding: 0;
+  color: #000; /* 👉 Màu chữ đen để hiển thị tốt trên nền sáng */
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto; /* 👉 Khoảng cách trên dưới giống code 1 */
+  background: whitesmoke; 
+  padding: 30px;
+  border-radius: 10px; /* 👉 Bo góc từ code 1 */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 👉 Bóng nhẹ hơn */
+  backdrop-filter: blur(12px); /* 👉 Giữ hiệu ứng blur */
+  border: 1px solid rgba(0, 0, 0, 0.05); /* 👉 Viền nhẹ để nổi bật form */
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #007bff; /* 👉 Màu xanh code 1 */
+  font-weight: bold;
+  font-size: 35px; /* 👉 Kích thước chữ từ code 1 */
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold; /* 👉 Từ code 1 */
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc; /* 👉 Viền rõ nét hơn */
+  border-radius: 5px;
+  background-color: white; /* 👉 Nền trắng rõ hơn thay vì mờ */
+  color: #000; /* 👉 Chữ đen */
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  background-color: #e6f0ff; /* 👉 Nhẹ nhàng khi focus */
+  box-shadow: 0 0 6px #007bff;
+}
+
+input::placeholder {
+  color: #aaa; /* 👉 Màu placeholder dịu hơn */
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  border-radius: 30px;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  background: #007bff; /* 👉 Màu xanh từ code 1 */
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  
+}
+
+button:hover {
+  transform: scale(1.03);
+  background-color: #0056b3;
+  box-shadow: 0 0 10px #ffffff;
+  border-radius: 30px;
+}
+
+.result {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  color: green;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  color: #000;
+  font-size: 18px;
+}
+
+.note {
+  font-size: 12px;
+  color: #666;
+  margin-top: -15px;
+  margin-bottom: 10px;
+  display: block;
+}

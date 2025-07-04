@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirebaseFormApi", "Fire_Base\FirebaseFormApi.csproj", "{A99F66C0-FFF8-0352-252A-EE5BE83E332F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A99F66C0-FFF8-0352-252A-EE5BE83E332F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A99F66C0-FFF8-0352-252A-EE5BE83E332F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A99F66C0-FFF8-0352-252A-EE5BE83E332F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A99F66C0-FFF8-0352-252A-EE5BE83E332F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA7AF2AB-20A0-42A1-ACB5-9285E819E79D}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanh Toán Gửi Xe</title>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/ThanhToan.css">
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<script src="js/iconLogin.js"></script> 
+
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-brand">Bãi Đỗ Xe Thông Minh 🔒</div>
+    <ul class="nav-links">
+    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+    <li class="nav-item"><a class="nav-link" href="about.html">Check Bãi</a></li>
+    <li class="nav-item"><a class="nav-link" href="feature.html">Tra cứu</a></li>
+    <li class="nav-item"><a class="nav-link" href="service.html">Dịch vụ</a></li>
+    <li class="nav-item"><a class="nav-link active" href="ThanhToan.html">Thanh toán</a></li>
+    <li class="nav-item" id="loginNav"><a class="nav-link" href="contact.html">Đăng Nhập</a></li>
+  </ul>
+
+
+    <!-- Hiển thị khi đã đăng nhập -->
+            <li id="userIconContainer" style="display: none; position: relative;">
+              <img id="userIcon" src="images/login.png" alt="User"
+                  style="width: 30px; height: 30px; border-radius: 30%; cursor: pointer;">
+              <div id="userInfo" style="
+                display: none; 
+                position: absolute; 
+                right: 0; 
+                top: 100%; 
+                background: white; 
+                padding: 30px; 
+                border: 1px solid #ccc; 
+                z-index: 999; 
+                box-shadow: 0 100px 60px rgba(0, 0, 0, 0.1);
+                width: 300px;
+                color: black;
+              ">
+                <p><strong>Tài khoản:</strong> <span id="infoUsername"></span></p>
+                <p><strong>Email:</strong> <span id="infoEmail"></span></p>
+                <p><strong>Mật Khẩu:</strong> <span id="infoPassword"></span></p>
+                <div style="text-align: center;">
+                  <button onclick="logout()" style="background-color: orange;">
+                    Đăng Xuất
+                  </button>
+                </div>
+              </div>
+            </li>
+  </header>
+
+  <!-- Nhập ID gửi xe -->
+  <div class="id-check-section">
+    <label for="rfidInput">Nhập ID gửi xe:</label>
+    <input type="text" id="rfidInput" placeholder="Nhập mã xe hoặc RFID">
+    <button onclick="checkAmount()">Kiểm tra</button>
+  </div>
+
+  <!-- Loading + Thông báo -->
+  <div id="loading" style="display:none; color: blue; text-align: center;">🔄 Đang kiểm tra...</div>
+  <div id="errorMsg" style="color: red; text-align: center;"></div>
+
+  <!-- Giao diện thanh toán -->
+  <div class="payment-container">
+    <h2>Thông tin thanh toán 🪙</h2>
+    <p>Số dư tài khoản hiện tại:</p>
+    <h3 id="balanceDisplay">-- VND</h3>
+
+    <p>Số tiền cần thanh toán 💵:</p>
+    <h1 id="amountDisplay">0 VND</h1>
+
+    <div class="payment-methods">
+      <button onclick="pay('qr')">Thanh toán từ tài khoản</button>
+      <button onclick="toggleRecharge()" class="btn-yellow">Nạp tiền</button>
+    </div>
+
+    <div id="successMessage" class="hidden">
+      <h3>✅ Thanh toán thành công!</h3>
+      <p>Cảm ơn quý khách đã sử dụng dịch vụ.</p>
+    </div>
+
+    <p id="lastUpdated">⏱️ Dữ liệu cập nhật lúc: --/--/----</p>
+  </div>
+
+  <!-- Giao diện nạp tiền QR -->
+  <div class="recharge-container hidden" id="rechargeBox">
+    <h2>💳 Nạp tiền vào tài khoản</h2>
+    <p class="note">📌 Quét mã QR bên dưới bằng app ngân hàng của bạn để nạp tiền.</p>
+    <img src="images/QR.png" alt="QR Code" class="qr-img">
+  </div>
+
+  <!-- Âm thanh -->
+  <audio id="successAudio" src="Voice/AmThanh_ThanhToan.mp3" preload="auto"></audio>
+
+  <!-- JS -->
+  <script src="js/ThanhToan.js"></script>
+</body>
+</html>

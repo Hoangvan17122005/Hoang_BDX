@@ -1,0 +1,89 @@
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Đăng Ký</title>
+  <link rel="stylesheet" href="css/Dangky.css">
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body class="sub_page">
+        <div class="hero_area">
+    <!-- Header -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html"><span>Autospar</span></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse"
+                  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-col`umn flex-lg-row align-items-center">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">Check Bãi</a></li>
+                <li class="nav-item"><a class="nav-link" href="feature.html">Tra Cứu</a></li>
+                <li class="nav-item"><a class="nav-link" href="service.html">Dịch Vụ</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" href="ThanhToan.html">Thanh Toán </a>
+                </li>
+                <li class="nav-item active"><a class="nav-link" href="contact.html">Đăng Nhập</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header -->
+  </div>
+</body>
+
+<body >
+<div class="container">
+  <h2><b>Đăng Ký Tài Khoản</b></h2>
+  <form onsubmit="registerUser(event)">
+    <label for="fullName">Họ và Tên</label>
+    <input type="text" id="fullName" placeholder="Nhập họ và tên..." required>
+
+    <label for="email">Email</label>
+    <input type="text" id="email" placeholder="example@gmail.com" required>
+
+    <label for="cccd">CCCD</label>
+    <input type="text" id="cccd" placeholder="Nhập số CCCD..." required>
+
+    <label for="regUsername">Tên đăng nhập</label>
+    <input type="text" id="regUsername" placeholder="Tên đăng nhập" required>
+
+    <label for="regPassword">Mật khẩu</label>
+    <input type="password" id="regPassword" placeholder="Mật khẩu" required>
+    <small class="note">Mật khẩu ít nhất 8 ký tự, bao gồm chữ thường và số.</small>
+
+    <label for="region">Khu vực</label>
+    <select id="region" required>
+      <option value="">-- Chọn khu vực --</option>
+      <option value="Việt Nam">Việt Nam</option>
+      <option value="Lào">Lào</option>
+      <option value="Hàn Quốc">Hàn Quốc</option>
+      <option value="Thái Lan">Thái Lan</option>
+      <option value="Trung Quốc">Trung Quốc</option>
+    </select>
+
+    <div class="buttons">
+      <button type="submit">Đăng Ký</button>
+      <button type="button" onclick="window.location.href='contact.html'">Chuyển sang Đăng Nhập</button>
+    </div>
+    <div class="result" id="registerResult"></div>
+  </form>
+</div>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="js/Login.js"></script>
+</body>
+</html>

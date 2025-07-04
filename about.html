@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+                                                              <!--Bãi Đỗ Xe-->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Check Bãi Xe</title>
+
+  <title>Thông Tin Bãi Đỗ Xe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/About.css"> <!-- kêy nối với css -->
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:400,700|Roboto:400,700&display=swap" rel="stylesheet"> -->
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+<!--khai báo chuyển trang-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="js/iconLogin.js"></script> 
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              Bãi Đỗ Xe Thông Minh 🔒
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="index.html">Trang Chủ <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="about.html"> Check Bãi</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="feature.html"> Tra Cứu </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="service.html"> Dịch Vụ </a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="ThanhToan.html">Thanh Toán </a>
+                </li>
+
+                <li id="loginNav" class="nav-item">
+                  <a class="nav-link" href="contact.html">Đăng Nhập</a>
+                </li>
+              </ul>
+
+
+             <!-- Hiển thị khi đã đăng nhập -->
+            <li id="userIconContainer" style="display: none; position: relative;">
+              <img id="userIcon" src="images/login.png" alt="User"
+                  style="width: 30px; height: 30px; border-radius: 30%; cursor: pointer;">
+              <div id="userInfo" style="
+                display: none; 
+                position: absolute; 
+                right: 0; 
+                top: 100%; 
+                background: white; 
+                padding: 30px; 
+                border: 1px solid #ccc; 
+                z-index: 999; 
+                box-shadow: 0 100px 60px rgba(0, 0, 0, 0.1);
+                width: 300px;
+              ">
+                <p><strong>Tài khoản:</strong> <span id="infoUsername"></span></p>
+                <p><strong>Email:</strong> <span id="infoEmail"></span></p>
+                <p><strong>Mật Khẩu:</strong> <span id="infoPassword"></span></p>
+                <div style="text-align: center;">
+                  <button onclick="logout()" style="background-color: orange;">
+                    Đăng Xuất
+                  </button>
+                </div>
+              </div>
+            </li>
+
+              <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!--trang 2 bãi đỗ xe ngắn hạn-->
+  <br>
+  <h1>🅿️ Tình Trạng Bãi Đỗ Xe</h1>
+  <br>
+  <h2>Bãi Đỗ Xe Ngắn Hạn 🚨</h2>
+  <!-- Bộ lọc tìm kiếm và trạng thái -->
+  <div class="filter-container">
+    <input type="text" id="searchBox" placeholder="🔍 Tìm kiếm theo tên bãi..." oninput="applyFilter()">
+    
+    <select id="filterStatus" onchange="applyFilter()">
+      <option value="all">Tất cả</option>
+      <option value="available">Còn chỗ</option>
+      <option value="full">Đã đầy</option>
+    </select>
+  </div>
+
+  <div id="totalCount">Đang tính tổng số xe...</div>
+  <div class="parking-container" id="firebaseData"></div>
+
+  <!-- Âm thanh cảnh báo khi bãi đầy -->
+  <audio id="fullAlert" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+  <script src="js/Trang_2.js"></script> <!--Kết nối với javajava--> 
+
+ <div class="horizontal-divider"></div> <!-- Đường kẻ nằm ngang -->
+
+  <!-- Bãi dài hạn -->
+<h2>Bãi Đỗ Xe Dài Hạn 🚏</h2>
+<div class="filter-section">
+  <input type="text" id="searchBoxLong" placeholder="🔍 Tìm kiếm theo tên Tầng..." onkeyup="applyLongTermFilter()">
+  <select id="filterStatusLong" onchange="applyLongTermFilter()">
+    <option value="all">Tất cả</option>
+    <option value="available">Còn chỗ</option>
+    <option value="full">Đã đầy</option>
+  </select>
+</div>
+
+<div id="totalCountlong">Đang tính tổng số xe...</div>
+
+<div id="longTermData" class="lot-container"></div>
+<p id="longTermCount"></p>
+<audio id="fullAlertLong" src="alert.mp3" preload="auto"></audio>
+ <p id="lastUpdated">⏱️ Dữ liệu cập nhật lúc: --/--/---- --:--</p>
+</body>
+</html>

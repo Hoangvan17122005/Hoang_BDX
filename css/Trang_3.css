@@ -1,0 +1,150 @@
+body {
+  background-color: #121212 !important;
+  color: #fff !important;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 1px;
+  transform: scale(0.9);        /* Thu nhỏ trang còn 90% */
+  transform-origin: top left;   /* Điểm neo thu nhỏ */
+  width: 111.11%;               /* Bù lại phần bị co */
+
+}
+
+.container {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 5px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 0 10px #00ffd5;
+  margin-top: 100px;
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 20%;
+  font-size: 19px;
+  border-radius: 30px;
+  border: none;
+  text-align: center;
+  color: black;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #00ffd5;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  
+}
+
+.hidden {
+  display: none;
+}
+
+#infoSection {
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  margin-top: 40px;
+
+}
+
+#price{
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  margin-top: 40px;
+
+}
+
+#infoSection.show {
+  display: block !important;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+#price .show{
+  display: block !important;
+  opacity: 1;
+  transform: translateY(0);
+
+}
+
+/* Nâng cấp phần hiển thị infoSection */
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 40px;
+  align-items: center; 
+}
+
+.info-box {
+  background-color: #2a2a2a;
+  border-radius: 15px;
+  padding: 25px 30px;
+  box-shadow: 0 0 20px rgba(0, 255, 213, 0.2);
+  width: 90%;
+  max-width: 650px;
+  color: #ffffff;
+  border: 1px solid #00ffd5;
+  margin: 0 auto; /* Căn giữa khung */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Căn giữa nội dung */
+  justify-content: center;
+  text-align: center;
+}
+
+.info-box h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color:#fbc02d;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #00ffd5;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.info-box p,
+.info-box li {
+  margin: 8px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+  width: 100%;
+}
+
+.info-box span {
+  font-weight: bold;
+  color: #fffd8c;
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-box li {
+  text-align: center;
+}
+
+hr {
+  border: none;
+  border-top: 1px dashed #777;
+  margin: 15px auto;
+  width: 90%;
+}
+
